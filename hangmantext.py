@@ -1,3 +1,8 @@
+#James Lin
+#jl3782@columbia.edu
+#hangmantext.py
+#hangman game using commandline text
+
 import time
 from array import *
 
@@ -161,8 +166,3 @@ while menu:
 		if number == 2:
 			print "See you soon!"
 			menu = False		
-	
-
-
-
-

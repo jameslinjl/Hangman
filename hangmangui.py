@@ -1,3 +1,8 @@
+#James Lin
+#jl3782@columbia.edu
+#hangmangui.py
+#hangman game using a GUI
+
 from Tkinter import *
 import tkMessageBox
 from array import *
@@ -14,6 +19,8 @@ def letterguess(guessfield, hiddenword, game, gamelabel1, man, e):
 	letterinword = False
 	valid = True
 	letter = guessfield.get()
+
+	## account for blank input ##
 	if (len(letter) == 0):
 		tkMessageBox.showinfo("Error", "Please enter a word or letter!")
 		valid = False
