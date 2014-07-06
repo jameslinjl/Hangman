@@ -19,6 +19,7 @@ def letterguess(guessfield, hiddenword, game, gamelabel1, man, e):
 	letterinword = False
 	valid = True
 	letter = guessfield.get()
+	letter = letter.lower()
 
 	## account for blank input ##
 	if (len(letter) == 0):
@@ -92,7 +93,7 @@ def wordguess(guessfield, hiddenword, game, man):
 def startgame(e, top):
 
 	global word 
-	word = e.get()
+	word = e.get().lower()
 
 	if len(word) < 1:
 		tkMessageBox.showinfo("Error", "Please enter a word!")
