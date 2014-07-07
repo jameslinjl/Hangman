@@ -20,6 +20,7 @@ def letterguess(guessfield, hiddenword, game, gamelabel1, man, e):
 	valid = True
 	letter = guessfield.get()
 	letter = letter.lower()
+	guessfield.delete(0, END)
 
 	## account for blank input ##
 	if (len(letter) == 0):
@@ -202,15 +203,13 @@ def playnow():
 	top = Toplevel()
 	top.wm_title("Game Lobby")
 	top.minsize(200,100)
-	top.geometry("200x100")
+	top.geometry("300x80")
 
-	myword = StringVar()
-	label = Label(top, textvariable=myword)
-	w = "Enter the word to guess below:"
-	myword.set(w)
+	label = Label(top)
 	label.pack()
 
-	e = Entry(top)
+	e = Entry(top, width=30)
+	e.insert(0, "Enter the word to be guessed")
 	e.pack()
 
 	benter = Button(top, text="Submit", width=7, command= lambda:startgame(e, top))
